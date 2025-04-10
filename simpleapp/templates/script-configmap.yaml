@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: script-configmap
+data: 
+  startup.sh: |
+    #!/bin/bash
+    echo "Hello world "
+    echo "Here are some ENV variables : A = $A, B = $B, C = $C"
+    sleep infinity
