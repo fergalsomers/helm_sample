@@ -160,5 +160,11 @@ env:
       secretKeyRef:
         name: simpleapp-secret
         key: Y-KEY
+  - name: D
+    valueFrom:
+      secretKeyRef:
+        name: another-secret
+        key: Z-KEY
+
 
 secret: not-the-real-secret

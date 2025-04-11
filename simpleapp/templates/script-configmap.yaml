@@ -6,5 +6,5 @@ data:
   startup.sh: |
     #!/bin/bash
     echo "Hello world "
-    echo "Here are some ENV variables : A = $A, B = $B, C = $C"
+    echo "Here are some ENV variables : A = $A, B = $B, C = $C, D = $D"
     sleep infinity
