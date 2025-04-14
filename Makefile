@@ -12,7 +12,9 @@ helm-deploy:
 
 
 # Get the name of the pod created by the Helm chart
-POD := ${shell kubectl get pod -l app=simpleapp -o jsonpath='{.items[0].metadata.name}'} 
+# Really this should be items[0], but this is a workaround for cases where pod doesn't yet exist
+# due to nature of bash variable assignment
+POD := ${shell kubectl get pod -l app=simpleapp -o jsonpath='{.items[*].metadata.name}'  | cut -f1 -d' '} 
 
 # get the logs from the pod (this first waits to make sure the pod is ready)
 logs:	
